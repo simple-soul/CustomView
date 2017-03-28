@@ -18,7 +18,6 @@ public class MyViewGroup extends ViewGroup
     public MyViewGroup(Context context, AttributeSet attrs)
     {
         super(context, attrs);
-        //gdsgs
     }
 
     public MyViewGroup(Context context, AttributeSet attrs, int defStyleAttr)
