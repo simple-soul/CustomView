@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="setX" format="integer"/>
+    <attr name="setY" format="integer"/>
+
+    <declare-styleable name="LineChartView">
+        <attr name="setX"/>
+        <attr name="setY"/>
+    </declare-styleable>
+
+</resources>

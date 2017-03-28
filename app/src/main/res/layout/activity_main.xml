@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="260dp"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/pic2"/>
+
+        <com.example.administrator.customview.custom.FlashTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:text="王的蔑视"
+            android:textSize="26sp"/>
+    </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/btn1"
+        style="@style/ButtonStyle"
+        android:text="时刻表"
+        />
+
+    <Button
+        android:id="@+id/btn2"
+        style="@style/ButtonStyle"
+        android:text="折线图"/>
+
+    <Button
+        android:id="@+id/btn3"
+        style="@style/ButtonStyle"
+        android:text="贝赛尔曲线"/>
+</LinearLayout>
