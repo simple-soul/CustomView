@@ -47,6 +47,7 @@ public class LineChartView extends View
     public LineChartView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
+        //获取自定义属性
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.LineChartView);
         int n = a.getIndexCount();
         for (int i = 0; i < n; i++)
@@ -67,6 +68,7 @@ public class LineChartView extends View
         }
         a.recycle();
 
+        //初始化画笔
         linePaint = new Paint();
         //抗锯齿
         linePaint.setAntiAlias(true);
@@ -75,7 +77,6 @@ public class LineChartView extends View
         pointPaint = new Paint();
         pointPaint.setStyle(Paint.Style.FILL);
         pointPaint.setColor(Color.argb(200, 255, 0, 0));
-
 
         baseLinePaint = new Paint();
         baseLinePaint.setColor(Color.argb(200, 0, 0, 0));
@@ -90,28 +91,32 @@ public class LineChartView extends View
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        //计算出view的宽高并保存
         winWidth = measureWidth(widthMeasureSpec);
         winHeight = measureHeight(heightMeasureSpec);
         setMeasuredDimension(winWidth, winHeight);
 
+        //把宽分成12份，高分成10份，上下左右各留一份空白，其余是表格
         widthSize = winWidth/12;
         heightSize = winHeight/10;
         Log.i("main", "winWidth:"+winWidth+", winHeight:"+winHeight);
 
+        //字体为宽度的36分之一，自我感觉正好
         TEXT_SIZE = winWidth/36;
 
+        //一格的数值大小
         xData = x/10;
         yData = y/8;
         Log.i("main", "x="+x+", y="+y);
 
+        //初始化笔
         textPaint = new Paint();
         textPaint.setColor(Color.argb(200, 95, 87, 84));
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTextSize(TEXT_SIZE);
     }
 
-
-
+    //计算view的宽度
     private int measureWidth(int measureSpec)
     {
         int result = 0;
@@ -132,6 +137,7 @@ public class LineChartView extends View
         return result;
     }
 
+    //计算view的高度
     private int measureHeight(int measureSpec)
     {
         int result = 0;

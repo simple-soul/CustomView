@@ -42,4 +42,10 @@
         android:id="@+id/btn3"
         style="@style/ButtonStyle"
         android:text="贝赛尔曲线"/>
+
+    <Button
+        android:id="@+id/btn4"
+        style="@style/ButtonStyle"
+        android:textAllCaps="false"
+        android:text="MyScrollView"/>
 </LinearLayout>

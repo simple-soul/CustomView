@@ -26,12 +26,18 @@ public class BezierView extends View
     private Paint mainLinePaint;
     private Paint GuideLinePaint;
     private int color;
+    //半径
     private int radius;
+    //保存的点集
     private List<PointSet> setList;
+    //主点
     private PointF mainPoint;
+    //引导点
     private PointF guidePoint1;
     private PointF guidePoint2;
+    //最终画面
     private Bitmap mainBitmap;
+    //实时画面
     private Bitmap bitmap;
     //已存入点数
     private int num = 0;
@@ -169,6 +175,22 @@ public class BezierView extends View
         GuideLinePaint.setAntiAlias(true);
         GuideLinePaint.setStrokeWidth(3);
         GuideLinePaint.setStyle(Paint.Style.FILL);
+
+        //
+        Canvas canvas1 = new Canvas(bitmap);
+        if (num != 0)
+        {
+            Path path = new Path();
+            PointSet pointSet = setList.get(num - 1);
+            path.moveTo(pointSet.mainPoint.x, pointSet.mainPoint.y);
+            path.quadTo(pointSet.guidePoint1.x,
+                    pointSet.guidePoint1.y,
+                    mainPoint.x,
+                    mainPoint.y);
+            mainLinePaint.setStyle(Paint.Style.STROKE);
+            canvas1.drawPath(path, mainLinePaint);
+        }
+
         invalidate();
     }
 
@@ -189,7 +211,7 @@ public class BezierView extends View
         guidePath.addCircle(guidePoint2.x, guidePoint2.y, radius, Path.Direction.CW);
         canvas.drawPath(guidePath, GuideLinePaint);
         //画出辅助线
-        canvas.drawLine(guidePoint1.x, guidePoint1.y,guidePoint2.x, guidePoint2.y, GuideLinePaint);
+        canvas.drawLine(guidePoint1.x, guidePoint1.y, guidePoint2.x, guidePoint2.y, GuideLinePaint);
         //画出主线
         if (num != 0)
         {

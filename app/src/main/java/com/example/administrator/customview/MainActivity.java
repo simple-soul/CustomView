@@ -9,12 +9,13 @@ import android.widget.ImageView;
 
 import com.example.administrator.customview.activity.BezierActivity;
 import com.example.administrator.customview.activity.LineChartActivity;
+import com.example.administrator.customview.activity.ScrollActivity;
 import com.example.administrator.customview.activity.TimeTableActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
     private ImageView image;
-    private Button btn1, btn2, btn3;
+    private Button btn1, btn2, btn3, btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,10 +38,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);
+        btn4 = (Button) findViewById(R.id.btn4);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +64,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn3:
                 intent = new Intent(this, BezierActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.btn4:
+                intent = new Intent(this, ScrollActivity.class);
                 startActivity(intent);
                 break;
         }

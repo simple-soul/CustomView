@@ -60,6 +60,7 @@ public class TimeTableView extends View
 
         //得到当前一周的日期
         dates = dateToWeek(new Date());
+
     }
 
     public TimeTableView(Context context, AttributeSet attrs, int defStyleAttr)
@@ -146,7 +147,7 @@ public class TimeTableView extends View
         canvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(),
                 R.drawable.pic9), winWidth, winHeight, true), 0, 0, new Paint());
         //绘制月份
-        canvas.drawText(new Date().getMonth() + "月", NUM_SIZE / 2, heightSize - 60, textPaint);
+        canvas.drawText(new Date().getMonth()+1 + "月", NUM_SIZE / 2, heightSize - 60, textPaint);
 
         //初始化日期
         for (int i = 0; i < 7; i++)
@@ -164,7 +165,7 @@ public class TimeTableView extends View
                     heightSize,
                     linePaint);
             //第一行的日期
-            canvas.drawText(dates.get(i).getDay() + "",
+            canvas.drawText(dates.get(i).getDate() + "",
                     (NUM_SIZE + widthSize / 2) + widthSize * i,
                     heightSize / 3,
                     textPaint);

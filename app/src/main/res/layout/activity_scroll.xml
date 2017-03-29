@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="#f86"
+              android:layout_height="match_parent">
+
+    <com.example.administrator.customview.custom.MyScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        >
+        <ImageView
+            android:src="@drawable/pic3"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"/>
+        <ImageView
+            android:src="@drawable/pic4"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"/>
+        <ImageView
+            android:src="@drawable/pic5"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"/>
+        <ImageView
+            android:src="@drawable/pic1"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"/>
+        <ImageView
+            android:src="@drawable/pic6"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"/>
+        <ImageView
+            android:src="@drawable/pic7"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"/>
+        <ImageView
+            android:src="@drawable/pic8"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"/>
+
+    </com.example.administrator.customview.custom.MyScrollView>
+</LinearLayout>
