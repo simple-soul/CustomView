@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--X轴长度-->
     <attr name="setX" format="integer"/>
+    <!--Y轴长度-->
     <attr name="setY" format="integer"/>
+    <!--X轴间隔数-->
+    <attr name="intervalX" format="integer"/>
+    <!--Y轴间隔数-->
+    <attr name="intervalY" format="integer"/>
+    <!--X轴单位-->
+    <attr name="unitX" format="string"/>
+    <!--Y轴单位-->
+    <attr name="unitY" format="string"/>
 
     <declare-styleable name="LineChartView">
         <attr name="setX"/>
         <attr name="setY"/>
+        <attr name="intervalX"/>
+        <attr name="intervalY"/>
+        <attr name="unitX"/>
+        <attr name="unitY"/>
     </declare-styleable>
 
 </resources>

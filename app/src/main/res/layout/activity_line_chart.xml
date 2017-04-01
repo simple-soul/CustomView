@@ -8,7 +8,11 @@
         android:id="@+id/lineChartView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        custom:setX="100"
-        custom:setY="80"
+        custom:setX="80"
+        custom:setY="120"
+        custom:intervalX="8"
+        custom:intervalY="12"
+        custom:unitX="X"
+        custom:unitY="Y"
         />
 </LinearLayout>
