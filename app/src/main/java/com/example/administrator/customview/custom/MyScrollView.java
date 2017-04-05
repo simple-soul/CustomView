@@ -1,7 +1,6 @@
 package com.example.administrator.customview.custom;
 
 import android.content.Context;
-import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -23,10 +22,6 @@ public class MyScrollView extends ViewGroup
     private int winWidth;
     private int winHeight;
     private int mLastY;
-    private int mStart;
-    private int mEnd;
-    private long mStartTime;
-    private long mLastTime;
     private VelocityTracker tracker;
     private int mMaxVelocity;
     private int yVelocity;
@@ -145,8 +140,6 @@ public class MyScrollView extends ViewGroup
         {
             case MotionEvent.ACTION_DOWN:
                 mLastY = y;
-                mStart = getScrollY();
-                mStartTime = SystemClock.uptimeMillis();
                 break;
 
             case MotionEvent.ACTION_MOVE:
@@ -189,7 +182,10 @@ public class MyScrollView extends ViewGroup
                 {
                     mScroller.startScroll(0, getScrollY(), 0, -(getScrollY() - getHeight() + winHeight));
                 }
-
+                releaseVelocityTracker();
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                releaseVelocityTracker();
                 break;
         }
         invalidate();
