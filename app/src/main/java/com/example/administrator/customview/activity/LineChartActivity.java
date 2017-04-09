@@ -30,13 +30,12 @@ public class LineChartActivity extends BaseActivity
         PointF pointF1 = new PointF(10, 67);
         PointF pointF2 = new PointF(20, 80);
         PointF pointF3 = new PointF(30, 75);
-        PointF pointF4 = new PointF(37, 60);
+        PointF pointF4 = new PointF(37, 97);
         PointF pointF5 = new PointF(42, 50);
-        PointF pointF6 = new PointF(55, 73);
+        PointF pointF6 = new PointF(55, 110);
         PointF pointF7 = new PointF(60, 43);
         PointF pointF8 = new PointF(70, 20);
         PointF pointF9 = new PointF(80, 36);
-        PointF pointF10 = new PointF(90, 6);
 
         data.add(pointF1);
         data.add(pointF2);
@@ -47,7 +46,6 @@ public class LineChartActivity extends BaseActivity
         data.add(pointF7);
         data.add(pointF8);
         data.add(pointF9);
-        data.add(pointF10);
 
         lineChartView.setData(data);
     }
