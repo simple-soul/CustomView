@@ -75,6 +75,7 @@ public class LineChartView extends View
         linePaint.setColor(Color.argb(200, 102, 0, 255));
 
         pointPaint = new Paint();
+        //实心
         pointPaint.setStyle(Paint.Style.FILL);
         pointPaint.setColor(Color.argb(200, 255, 0, 0));
 
