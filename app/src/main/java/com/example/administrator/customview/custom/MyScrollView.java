@@ -176,7 +176,6 @@ public class MyScrollView extends ViewGroup
                 if (getScrollY() < 0)
                 {
                     mScroller.startScroll(0, getScrollY(), 0, -getScrollY());
-                    Log.i("main", "执行了");
                 }
                 if (getScrollY() > getHeight() - winHeight)
                 {
